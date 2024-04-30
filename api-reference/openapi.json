@@ -31,6 +31,15 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The maximum offset",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {

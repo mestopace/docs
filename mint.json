@@ -29,6 +29,10 @@
     {
       "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "name": "Acquirer API",
+      "url": "acquirer"
     }
   ],
   "anchors": [
@@ -80,6 +84,18 @@
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
         "api-reference/endpoint/delete"
+      ]
+    },
+    {
+      "group": "API Documentation",
+      "pages": [
+        "acquirer/introduction"
+      ]
+    },
+    {
+      "group": "API Endpoints",
+      "pages": [
+        "acquirer/endpoint/send-instapay-p2p"
       ]
     }
   ],

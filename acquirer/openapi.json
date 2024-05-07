@@ -1,0 +1,119 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Sample API",
+    "description": "A sample API using OpenAPI 3.0.1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://uat-api.starpay.com.ph:9943/protected/acquirer/v2r1",
+      "description": "UAT server"
+    }
+  ],
+  "paths": {
+    "/sendInstapayP2pForAcquirers": {
+      "post": {
+        "summary": "Send Instapay P2P for Acquirers",
+        "requestBody": {
+          "description": "User object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "header": {
+                    "$ref": "#/components/schemas/Header"
+                  },
+                  "params": {
+                    "$ref": "#/components/schemas/Params"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sample Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "responseCode": {
+                      "type": "string"
+                    },
+                    "responseMessage": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Header": {
+        "type": "object",
+        "properties": {
+          "apiVersion": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "clientVersion": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": ["apiVersion", "channel", "clientVersion", "token"]
+      },
+      "Params": {
+        "type": "object",
+        "properties": {
+          "requestorAccountId": {
+            "type": "string"
+          },
+          "mid": {
+            "type": "string"
+          },
+          "clientReferenceNumber": {
+            "type": "string"
+          },
+          "recipientFirstName": {
+            "type": "string"
+          },
+          "recipientMiddleName": {
+            "type": "string"
+          },
+          "recipientLastName": {
+            "type": "string"
+          },
+          "recipientSwiftCode": {
+            "type": "string"
+          },
+          "recipientAccountNumber": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "string"
+          },
+          "remarks": {
+            "type": "string"
+          }
+        },
+        "required": ["requestorAccountId", "mid", "clientReferenceNumber", 
+          "recipientFirstName", "recipientMiddleName", "recipientLastName", 
+          "recipientSwiftCode", "recipientAccountNumber", "amount"]
+      }
+    }
+  }
+}
